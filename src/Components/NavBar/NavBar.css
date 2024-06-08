@@ -1,0 +1,90 @@
+nav {
+     width: 100%;
+     
+     color: white;
+     padding: 10px 20px; /* Adjusted padding */
+     position: fixed;
+     top: 0;
+     left: 0;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     z-index: 10;
+    
+ }
+ 
+ .logo img {
+     width: 100px;
+     color: white;
+ }
+ 
+ nav ul {
+     display: flex;
+     align-items: center;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ nav ul li {
+     list-style: none;
+     margin: 0 20px; /* Adjusted margin */
+     font-size: 16px;
+ }
+ 
+ nav ul li a {
+     text-decoration: none;
+     color: white;
+     transition: color 0.3s;
+ }
+ 
+ nav ul li a:hover {
+     color: #ccc; /* Lighter color on hover */
+ }
+ 
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     nav {
+         padding: 10px 20px;
+     }
+ 
+     .logo img {
+         width: 80px; /* Adjusted logo size for smaller screens */
+     }
+ 
+     nav ul {
+         display: none; /* Hide the menu on small screens */
+         flex-direction: column;
+         position: absolute;
+         top: 60px; /* Adjusted based on nav height */
+         left: 0;
+         width: 100%;
+         background: #333;
+     }
+ 
+     nav ul li {
+         margin: 10px 0;
+         text-align: center;
+     }
+ 
+     .hamburger {
+         display: block;
+         cursor: pointer;
+     }
+ 
+     .hamburger div {
+         width: 25px;
+         height: 3px;
+         background-color: white;
+         margin: 5px 0;
+     }
+ }
+ 
+ /* Show the menu when active */
+ nav ul.active {
+     display: flex;
+ }
+ @media (max-width: 576px){
+     .logo img{
+          width: 40px;
+     }
+ }
