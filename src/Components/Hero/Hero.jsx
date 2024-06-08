@@ -12,13 +12,18 @@ const Hero = () => {
     const [catData, setCatData] = useState(null);
   const [view, setView] = useState('card');
 
+ 
   const fetchRandomCat = async () => {
-    const response = await axios.get('https://api.thecatapi.com/v1/images/search?has_breeds=1');
-    const cat = response.data[0];
-    const fullCatDetails = await axios.get(`https://api.thecatapi.com/v1/images/${cat.id}`);
-    setCatData(fullCatDetails.data);
+    try {
+      const response = await axios.get('https://api.thecatapi.com/v1/images/search?has_breeds=1');
+      const cat = response.data[0];
+      const fullCatDetails = await axios.get(`https://api.thecatapi.com/v1/images/${cat.id}`);
+      setCatData(fullCatDetails.data);
+    } catch (error) {
+      setError(error.message);
+    }
   };
-    
+
   return (
     
     <div className="hero container">
